@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>新增产品-贵州薏米阳光溯源系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/resize.js"></script>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mui.picker.min.css">
+    <script src="js/colorfont.js"></script>
+</head>
+
+<body class="bodybg">
+    <div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+        <!--侧滑施肥情况-->
+        <aside id="offCanvasSide" class="mui-off-canvas-right">
+            <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+                <a class="mui-bar mui-bar-tab f_add_wrap tc icon icon-add f64 radius blue f_add_sf" href="javascript:;" flex="main:center cross:center"></a>
+                <div class="mui-scroll search_wrap">
+                    <h1 class="f32 t_search bodybg grey tc">施肥情况</h1>
+                    <div class="search_txt colorlight">
+                        <ul class="list_wrap pro_list f20 mt30 f24">
+                            <li flex>
+                                <a href="javascript:;" flex class="flex1">
+                                    <div class="txt_wrap flex1 pdr0">
+                                        <h3 class="f32 color bold ellipsis mb">肥料名称:<span>有机肥</span></h3>
+                                        <p class="ellipsis">施肥时期：<b>苗期</b></p>
+                                        <p class="ellipsis">施肥方式：<b>土壤施肥</b></p>
+                                        <p class="ellipsis">实际使用量：<b>1kg</b></p>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="i icon icon-del f40 red pdl0"></a>
+                            </li>
+                            <li flex>
+                                <a href="javascript:;" flex class="flex1">
+                                    <div class="txt_wrap flex1 pdr0">
+                                        <h3 class="f32 color bold ellipsis mb">肥料名称:<span>有机肥</span></h3>
+                                        <p class="ellipsis">施肥时期：<b>苗期</b></p>
+                                        <p class="ellipsis">施肥方式：<b>土壤施肥</b></p>
+                                        <p class="ellipsis">实际使用量：<b>1kg</b></p>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="i icon icon-del f40 red pdl0"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--主界面部分-->
+        <div class="mui-inner-wrap">
+            <div class="mui-content bgfff mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <header class="white tc f36 h_inset wave bgblue">
+                        <a href="jabvascript:;" class="mui-action-back pa icon icon-back f50 t0 l0"></a>
+                        <div class="txt_wrap">
+                            <svg aria-hidden="true">
+                                <use xlink:href="#icon-t_add"></use>
+                            </svg>
+                            <p>新增产品</p>
+                        </div>
+                    </header>
+                    <ul class="form_wrap form_default f32">
+                        <li flex>
+                            <span><i class="red">*</i>产品分类</span>
+                            <select name="" required>
+                                <option value="">请选择</option>
+                            </select>
+                        </li>
+                        <li flex>
+                            <span><i class="red">*</i>检验日期</span>
+                            <input type="text" data-options='{"type":"date"}' class="mui-btn mui-btn-block btn_date flex1" placeholder="选择日期" readonly>
+                        </li>
+                        <li flex>
+                            <span><i class="red">*</i>日期</span>
+                            <input class="i_date" type="date" class="flex1" placeholder="选择日期">
+                        </li>
+                        <li flex>
+                            <span><i class="red">*</i>产品名称</span>
+                            <input type="text" name="" placeholder="请输入产品名称" required>
+                        </li>
+                        <li flex="main:justify">
+                            <span><i class="red">*</i>产量限定数额<a class="icon icon-tips f38 grey" href="#numpopover"></a></span>
+                            <div class="mui-numbox" data-numbox-min='1'>
+                                <button class="mui-btn mui-btn-numbox-minus icon icon-reduce" type="button"></button>
+                                <input class="mui-input-numbox" type="number" />
+                                <button class="mui-btn mui-btn-numbox-plus icon icon-add2" type="button"></button>
+                            </div>
+                        </li>
+                        <li flex="main:justify">
+                            <span><i class="red">*</i>产品扫描次数<a class="icon icon-tips f38 grey" href="#timespopover"></a></span>
+                            <div class="mui-numbox" data-numbox-min='0'>
+                                <button class="mui-btn mui-btn-numbox-minus icon icon-reduce" type="button"></button>
+                                <input class="mui-input-numbox" type="number" />
+                                <button class="mui-btn mui-btn-numbox-plus icon icon-add2" type="button"></button>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><i class="red">*</i>产品图片<span class="f26 grey">（请至少选择一张图片上传）</span></h5>
+                            <!--    照片添加    -->
+                            <div class="z_photo clearfix" flex>
+                                <div class="z_file tc">
+                                    <i class="icon icon-add1"></i>
+                                    <input type="file" name="file" id="file1" class="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><i class="red">*</i>产品简介</h5>
+                            <div class="pdlr20">
+                                <textarea class="mb1" name="" placeholder="请输入产品简介"></textarea>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="red">*</i>是否有污染区</span>
+                            <div class="mui-switch mui-switch-blue mui-switch-mini">
+                                <div class="mui-switch-handle"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="red">*</i>有无降水</span>
+                            <div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+                                <div class="mui-switch-handle"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>肥料类型</h5>
+                            <div class="checkbox_wrap">
+                                <div class="f28" flex="main:justify">
+                                    <div class="mui-checkbox mui-left">
+                                        <label>无机肥料
+                                            <input type="checkbox" name="checkbox" value="">
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox mui-left">
+                                        <label>有机肥料
+                                            <input type="checkbox" name="checkbox" value="">
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox mui-left">
+                                        <label>微生物类
+                                            <input type="checkbox" name="checkbox" value="">
+                                        </label>
+                                    </div>
+                                    <div class="mui-checkbox mui-left">
+                                        <label>无肥生态
+                                            <input type="checkbox" name="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>证书</h5>
+                            <div class="f28" flex="main:justify">
+                                <div class="mui-checkbox mui-left">
+                                    <label>QS证书
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                                <div class="mui-checkbox mui-left">
+                                    <label>无公害认证
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                                <div class="mui-checkbox mui-left">
+                                    <label>绿色认证
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                                <div class="mui-checkbox mui-left">
+                                    <label>有机认证
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="f28" flex="main:justify">
+                                <div class="mui-checkbox mui-left">
+                                    <label>检测报告
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                                <div class="mui-checkbox mui-left">
+                                    <label>食品流通许可证
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                                <div class="mui-checkbox mui-left">
+                                    <label>进口报关单
+                                        <input type="checkbox" name="certificate" value="">
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>radio单选</h5>
+                            <div class="checkbox_wrap">
+                                <div class="f28" flex="box:mean">
+                                    <div class="mui-radio mui-left">
+                                        <label>单选1
+                                            <input type="radio" name="radio" value="">
+                                        </label>
+                                    </div>
+                                    <div class="mui-radio mui-left">
+                                        <label>单选2
+                                            <input type="radio" name="radio" value="">
+                                        </label>
+                                    </div>
+                                    <div class="mui-radio mui-left">
+                                        <label>单选3
+                                            <input type="radio" name="radio" value="">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li flex>
+                            <span>仓库温度</span>
+                            <input type="number" name="" placeholder="请输入温度">
+                            <span>℃</span>
+                        </li>
+                        <li flex>
+                            <span>仓库湿度</span>
+                            <input type="number" name="" placeholder="请输入湿度">
+                            <span>%</span>
+                        </li>
+                        <li flex>
+                            <span><i class="red">*</i>坐标</span>
+                            <input type="number" name="" placeholder="经度">
+                            <input type="number" name="" placeholder="纬度">
+                        </li>
+                        <li flex>
+                            <a class="link_more flex1" href="#offCanvasSide">施肥情况</a>
+                        </li>
+                        <li>
+                            <button class="btn radius f36" type="button">保 存</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
+        </div>
+    </div>
+    <div id="numpopover" class="mui-popover">
+        <div class="mui-popover-arrow"></div>
+        <div class="mui-scroll-wrapper tc">
+            <div class="mui-scroll">
+                <ul class="mui-table-view blue">
+                    <li class="mui-table-view-cell">必须是大于0的正整数</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="timespopover" class="mui-popover">
+        <div class="mui-popover-arrow"></div>
+        <div class="mui-scroll-wrapper tc">
+            <div class="mui-scroll">
+                <ul class="mui-table-view blue">
+                    <li class="mui-table-view-cell">0：为不限定扫描次数</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+    $(".btn_date").on('tap', function() {
+        var picker = new mui.DtPicker({
+            "type": "date"
+        });
+        picker.show(function(rs) {
+            $(".btn_date").val(rs.text);
+        });
+    })
+
+    $(".f_add_sf").on('tap', function() {
+        layer.open({
+            title: ['添加施肥情况'],
+            shade: 'background-color: rgba(0,0,0,.5)',
+            className: 'popup_default',
+            shadeClose: false,
+            content: "<ul class='layer_form'><li><input class='i_add' type='text' name='' value='' placeholder='请输入肥料名称' required></li><li><input class='i_add' type='text' name='' value='' placeholder='请输入施肥时期' required></li><li><input class='i_add' type='text' name='' value='' placeholder='请输入施肥方式' required></li><li><input class='i_add' type='text' name='' value='' placeholder='请输入实际使用量' required></li></ul><h6 class='layer_hint f28 hide red mt10'>肥料名称不能为空！</h6>",
+            btn: ['确认', '取消'],
+            yes: function(index) {
+                // 确认回调
+                var isnull = $(".i_add").val() == '';
+                if (isnull) {
+                    $(".layer_hint").slideDown()
+                } else {
+                    layer.close(index);
+                    layer.open({
+                        content: '添加成功！',
+                        skin: 'msg',
+                        time: 2
+                    });
+                }
+
+            }
+        });
+    })
+
+    //删除
+    $(".icon-del").on('tap', function() {
+        layer.open({
+            title: ['提示'],
+            shade: 'background-color: rgba(0,0,0,.5)',
+            className: 'popup_default',
+            content: "<h1 class='f40 colorlight'>确认删除？</h1><p>确认删除该施肥信息，删除后将无法找回</p>",
+            btn: ['确认', '取消'],
+            yes: function(index) {
+                // 确认回调
+                layer.close(index);
+                layer.open({
+                    content: '删除成功！',
+                    skin: 'msg',
+                    time: 2
+                });
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>贵州薏米阳光溯源系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/resize.js"></script>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/colorfont.js"></script>
+</head>
+
+<body class="bodybg">
+    <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+        <!--侧滑菜单部分-->
+        <aside id="offCanvasSide" class="mui-off-canvas-left">
+            <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <h1 class="f36 yellow tc l_user">
+                        <svg class="admin" aria-hidden="true">
+                            <use xlink:href="#icon-admin"></use>
+                        </svg>
+                        <p>Admin</p>
+                    </h1>
+                    <nav class="l_nav white">
+                        <a class="active" href="menu.html"><i class="icon icon-home"></i>首页</a>
+                        <a href="sort_mgmt.html"><i class="icon icon-n1"></i>产品分类管理</a>
+                        <a href="add_product.html"><i class="icon icon-n2"></i>新增产品</a>
+                        <a href="list.html"><i class="icon icon-n3"></i>产品列表</a>
+                        <a href="login.html"><i class="icon icon-exit"></i>退出</a>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <!--主界面部分-->
+        <div class="mui-inner-wrap">
+            <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <header class="white pa tc w100 f36 t0 l0">
+                        <a href="#offCanvasSide" class="pa icon icon-menu f50 t0 l0"></a>
+                        <h1>薏米阳光溯源系统</h1>
+                    </header>
+                    <img src="images/t_img.jpg" alt="">
+                    <h3 class="m_title f30 grey">产品信息管理</h3>
+                    <ul class="list_wrap menu_list f20">
+                        <li>
+                            <a href="sort_mgmt.html" flex>
+                                <svg aria-hidden="true">
+                                    <use xlink:href="#icon-m_menu"></use>
+                                </svg>
+                                <div class="txt_wrap flex1">
+                                    <h2 class="f36">产品分类管理</h2>
+                                    <p>Product Classification Management</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="add_product.html" flex>
+                                <svg aria-hidden="true">
+                                    <use xlink:href="#icon-m_add"></use>
+                                </svg>
+                                <div class="txt_wrap flex1">
+                                    <h2 class="f36">新增产品</h2>
+                                    <p>Add Product</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="list.html" flex>
+                                <svg aria-hidden="true">
+                                    <use xlink:href="#icon-m_list"></use>
+                                </svg>
+                                <div class="txt_wrap flex1">
+                                    <h2 class="f36">产品列表</h2>
+                                    <p>Add Product</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
+        </div>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
